@@ -1,0 +1,20 @@
+---
+interface Props {
+	name: string;
+	tag: string;
+	gradientFrom?: string;
+	class?: string;
+}
+
+const { name, tag, gradientFrom = '#333333', class: className = '' } = Astro.props;
+---
+
+<div class:list={[
+	'relative flex flex-col justify-end p-3 lg:p-5 overflow-hidden',
+	className
+]}
+	style={`background: linear-gradient(to top, #1A1A1A 0%, ${gradientFrom} 60%, ${gradientFrom}00 100%);`}
+>
+	<h3 class="font-heading text-white text-base lg:text-xl font-normal leading-tight">{name}</h3>
+	<span class="font-body text-primary text-xs font-semibold mt-1">{tag}</span>
+</div>

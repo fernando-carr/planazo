@@ -1,0 +1,23 @@
+---
+interface Props {
+	text: string;
+	href?: string;
+	variant?: 'light' | 'dark';
+	fullWidth?: boolean;
+	class?: string;
+}
+
+const { text, href, variant = 'light', fullWidth = false, class: className = '' } = Astro.props;
+const Tag = href ? 'a' : 'button';
+const colorClasses = variant === 'light'
+	? 'border-white text-white hover:bg-white/10'
+	: 'border-dark-card text-dark-card hover:bg-dark-card/5';
+const baseClasses = `inline-flex items-center justify-center border-2 font-body font-semibold text-sm md:text-base px-8 py-4 tracking-wide transition-all cursor-pointer ${colorClasses} ${fullWidth ? 'w-full' : ''} ${className}`;
+---
+
+<Tag
+	{...(href ? { href } : {})}
+	class={baseClasses}
+>
+	{text}
+</Tag>

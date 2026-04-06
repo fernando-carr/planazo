@@ -1,0 +1,63 @@
+---
+import SocialIcons from './ui/SocialIcons.astro';
+---
+
+<footer class="bg-dark-card px-5 md:px-10 lg:px-[120px] py-10 md:py-[50px] lg:py-[60px]">
+	<!-- Top -->
+	<div class="flex flex-col md:flex-row md:justify-between gap-8 lg:gap-0">
+		<!-- Left: Logo + Description + Social -->
+		<div class="flex flex-col gap-4">
+			<a href="#inicio" class="flex items-center gap-1.5 lg:gap-2.5">
+				<!-- <img src="/images/logo.svg" alt="logo" width="40" height="40"> -->
+				<span class="font-heading text-white text-base lg:text-xl font-normal">ESTUDIOS PLANAZO</span>
+			</a>
+			<p class="text-white-50 font-body text-[0.6875rem] lg:text-sm leading-relaxed">
+				Academia Audiovisual · Comunidad Creativa<br />· Agencia de Contenido
+			</p>
+			<div class="flex items-center gap-3.5 lg:gap-4">
+				<SocialIcons size={18} class="text-white-50" />
+			</div>
+		</div>
+
+		<!-- Right: Link Columns -->
+		<div class="flex gap-5 md:gap-10 lg:gap-[60px]">
+			<!-- Servicios -->
+			<div class="flex flex-col gap-2 lg:gap-3">
+				<h4 class="text-white font-body text-[0.625rem] lg:text-xs font-bold tracking-[2px]">SERVICIOS</h4>
+				<a href="#servicios" class="text-white-50 font-body text-[0.6875rem] lg:text-sm hover:text-white transition-colors">Producción Audiovisual</a>
+				<a href="#servicios" class="text-white-50 font-body text-[0.6875rem] lg:text-sm hover:text-white transition-colors">Marketing Digital</a>
+				<a href="#automatizacion" class="text-white-50 font-body text-[0.6875rem] lg:text-sm hover:text-white transition-colors">Automatización IA</a>
+			</div>
+
+			<!-- Empresa (hidden on mobile/tablet) -->
+			<div class="hidden lg:flex flex-col gap-3">
+				<h4 class="text-white font-body text-xs font-bold tracking-[2px]">EMPRESA</h4>
+				<a href="#metodologia" class="text-white-50 font-body text-sm hover:text-white transition-colors">Sobre Nosotros</a>
+				<a href="#portafolio" class="text-white-50 font-body text-sm hover:text-white transition-colors">Portafolio</a>
+				<a href="#contacto" class="text-white-50 font-body text-sm hover:text-white transition-colors">Contacto</a>
+			</div>
+
+			<!-- Contacto -->
+			<div class="flex flex-col gap-2 lg:gap-3">
+				<h4 class="text-white font-body text-[0.625rem] lg:text-xs font-bold tracking-[2px]">CONTACTO</h4>
+				<span class="text-white-50 font-body text-[0.6875rem] lg:text-sm">info@estudiosplanazo.cu</span>
+				<span class="text-white-50 font-body text-[0.6875rem] lg:text-sm">+53 5555 1234</span>
+				<span class="text-white-50 font-body text-[0.6875rem] lg:text-sm">La Habana, Cuba</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Divider -->
+	<div class="h-px bg-white-10 my-7 md:my-8 lg:my-10"></div>
+
+	<!-- Bottom -->
+	<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+		<span class="text-white-38 font-body text-[0.6875rem] lg:text-[0.8125rem]">
+			© 2025 Estudios Planazo. Todos los derechos reservados.
+		</span>
+		<div class="hidden lg:flex items-center gap-6">
+			<a href="#" class="text-white-38 font-body text-[0.8125rem] hover:text-white-50 transition-colors">Términos</a>
+			<a href="#" class="text-white-38 font-body text-[0.8125rem] hover:text-white-50 transition-colors">Privacidad</a>
+		</div>
+	</div>
+</footer>

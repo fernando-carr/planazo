@@ -1,0 +1,29 @@
+---
+import BrushStroke from './BrushStroke.astro';
+
+interface Props {
+	title: string;
+	subtitle?: string;
+	titleSize?: 'default' | 'large';
+	class?: string;
+}
+
+const { title, subtitle, titleSize = 'default', class: className = '' } = Astro.props;
+const sizeClasses = titleSize === 'large'
+	? 'text-[1.75rem] leading-none md:text-4xl lg:text-[2.625rem]'
+	: 'text-[2rem] leading-none md:text-[2.5rem] lg:text-5xl';
+---
+
+<div class:list={['flex flex-col gap-4', className]}>
+	<div class="flex flex-col gap-0">
+		<h2 class:list={['font-heading text-text-heading font-normal', sizeClasses]}>
+			{title}
+		</h2>
+		<BrushStroke width={200} />
+	</div>
+	{subtitle && (
+		<p class="text-text-body text-sm md:text-[0.9375rem] lg:text-base leading-relaxed max-w-[700px]">
+			{subtitle}
+		</p>
+	)}
+</div>

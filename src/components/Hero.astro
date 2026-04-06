@@ -1,0 +1,58 @@
+---
+import PrimaryButton from './ui/PrimaryButton.astro';
+import SecondaryButton from './ui/SecondaryButton.astro';
+import BrushStroke from './ui/BrushStroke.astro';
+---
+
+<section id="inicio" class="relative h-[667px] md:h-[700px] lg:h-[810px] flex flex-col justify-center px-5 md:px-10 lg:px-[120px] gap-4 md:gap-5 lg:gap-6 overflow-hidden">
+	<!-- Background -->
+	<div class="absolute inset-0 bg-dark"></div>
+	<div class="absolute inset-0" style="background: radial-gradient(ellipse 120% 120% at 80% 20%, #F2B705 0%, #0D0D0D 100%); opacity: 0.25; lg:opacity: 0.3;"></div>
+
+	<!-- Content -->
+	<div class="relative z-10 flex flex-col gap-4 md:gap-5 lg:gap-6">
+		<!-- Tag -->
+		<div class="inline-flex self-start">
+			<span class="bg-primary text-dark-card font-body text-[0.625rem] md:text-[0.6875rem] lg:text-xs font-bold tracking-[2px] px-3 md:px-3.5 lg:px-4 py-1.5 md:py-2">
+				ACADEMIA AUDIOVISUAL · COMUNIDAD CREATIVA · AGENCIA DE CONTENIDO
+			</span>
+		</div>
+
+		<div class="flex flex-col gap-0">
+			<!-- Heading -->
+			<h1 class="font-heading text-white font-normal text-[2.375rem]/[2.8rem] md:text-[3.25rem]/[3.75rem] lg:text-[4.5rem]/[5rem]">
+				ESTRATEGIA, CONTENIDO<br />Y COMUNICACIÓN<br />INTEGRAL
+			</h1>
+	
+			<!-- Brush stroke -->
+			<BrushStroke width={200} class="md:w-[120px] md:h-[5px] lg:w-[120px] lg:h-[6px]" />
+		</div>
+
+		<!-- Subtitle -->
+		<p class="text-white-80 font-body text-sm md:text-base lg:text-lg leading-relaxed max-w-[600px]">
+			Combinamos estrategia, creatividad y producción audiovisual para transformar ideas en mensajes claros y efectivos.
+		</p>
+
+		<!-- CTAs -->
+		<div class="flex flex-col md:flex-row gap-3 md:gap-4">
+			<PrimaryButton text="SOLICITA TU DIAGNÓSTICO" href="#contacto" fullWidth class="md:w-auto" />
+			<SecondaryButton text="VER SERVICIOS" href="#servicios" fullWidth class="md:w-auto" />
+		</div>
+
+		<!-- Stats -->
+		<div class="flex items-center gap-6 md:gap-10 lg:gap-[60px] mt-2">
+			<div class="flex flex-col gap-0.5">
+				<span class="font-heading text-primary text-2xl md:text-[1.875rem] lg:text-4xl font-normal">150+</span>
+				<span class="text-white-50 font-body text-[0.6875rem] md:text-xs lg:text-sm">Proyectos</span>
+			</div>
+			<div class="flex flex-col gap-0.5">
+				<span class="font-heading text-primary text-2xl md:text-[1.875rem] lg:text-4xl font-normal">50+</span>
+				<span class="text-white-50 font-body text-[0.6875rem] md:text-xs lg:text-sm">Clientes</span>
+			</div>
+			<div class="flex flex-col gap-0.5">
+				<span class="font-heading text-primary text-2xl md:text-[1.875rem] lg:text-4xl font-normal">5+</span>
+				<span class="text-white-50 font-body text-[0.6875rem] md:text-xs lg:text-sm">Años</span>
+			</div>
+		</div>
+	</div>
+</section>

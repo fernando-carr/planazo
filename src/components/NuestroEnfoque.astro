@@ -1,0 +1,23 @@
+---
+import SectionTitle from './ui/SectionTitle.astro';
+
+const quotes = [
+	'Creemos que la comunicación efectiva no se basa únicamente en producir contenido, sino en construir una estructura estratégica que permita a las marcas comunicar con claridad, consistencia y propósito.',
+	'Nuestro objetivo es ayudar a cada cliente a transformar su comunicación en una herramienta real de posicionamiento, crecimiento, proyección y conversión.',
+];
+---
+
+<section class="bg-bg-light px-5 md:px-10 lg:px-[120px] py-[60px] md:py-20 lg:py-[100px] flex flex-col items-center gap-8 md:gap-10 lg:gap-12">
+	<SectionTitle title="NUESTRO ENFOQUE" />
+
+	<div class="flex flex-col gap-4 md:gap-8 lg:gap-10 w-full max-w-[900px]">
+		{quotes.map((quote) => (
+			<div class="flex gap-4 lg:gap-6">
+				<div class="w-1.5 bg-primary shrink-0 rounded-sm"></div>
+				<p class="text-text-heading font-body text-base lg:text-lg italic leading-relaxed lg:leading-[1.7]">
+					{quote}
+				</p>
+			</div>
+		))}
+	</div>
+</section>

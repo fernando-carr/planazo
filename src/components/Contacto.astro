@@ -1,0 +1,74 @@
+---
+import SectionTitle from './ui/SectionTitle.astro';
+import PrimaryButton from './ui/PrimaryButton.astro';
+---
+
+<section id="contacto" class="bg-white px-5 md:px-10 lg:px-[120px] py-[60px] md:py-20 lg:py-[100px]">
+	<div class="flex flex-col lg:flex-row gap-10 md:gap-12 lg:gap-20">
+		<!-- Title -->
+		<div class="lg:w-2/5">
+			<SectionTitle
+				titleSize="large"
+				title="HABLEMOS"
+				subtitle="¿Listo para transformar tu comunicación? Cuéntanos sobre tu proyecto."
+			/>
+		</div>
+
+		<!-- Form -->
+		<form class="flex flex-col gap-3.5 md:gap-4 lg:gap-5 w-full lg:w-3/5">
+			<!-- Name + Email row -->
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 md:gap-4 lg:gap-5">
+				<div class="flex flex-col gap-2">
+					<label for="name" class="font-body text-text-body text-[0.8125rem] font-medium">Nombre</label>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						placeholder="Tu nombre"
+						class="h-12 px-4 border border-border font-body text-sm placeholder:text-text-muted outline-none focus:border-primary transition-colors"
+						required
+					/>
+				</div>
+				<div class="flex flex-col gap-2">
+					<label for="email" class="font-body text-text-body text-[0.8125rem] font-medium">Email</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						placeholder="tu@email.com"
+						class="h-12 px-4 border border-border font-body text-sm placeholder:text-text-muted outline-none focus:border-primary transition-colors"
+						required
+					/>
+				</div>
+			</div>
+
+			<!-- Empresa -->
+			<div class="flex flex-col gap-2">
+				<label for="empresa" class="font-body text-text-body text-[0.8125rem] font-medium">Empresa</label>
+				<input
+					type="text"
+					id="empresa"
+					name="empresa"
+					placeholder="Nombre de tu empresa"
+					class="h-12 px-4 border border-border font-body text-sm placeholder:text-text-muted outline-none focus:border-primary transition-colors"
+				/>
+			</div>
+
+			<!-- Mensaje -->
+			<div class="flex flex-col gap-2">
+				<label for="mensaje" class="font-body text-text-body text-[0.8125rem] font-medium">Mensaje</label>
+				<textarea
+					id="mensaje"
+					name="mensaje"
+					placeholder="Cuéntanos sobre tu proyecto..."
+					rows={5}
+					class="h-[140px] px-4 py-3 border border-border font-body text-sm placeholder:text-text-muted outline-none focus:border-primary transition-colors resize-none"
+					required
+				></textarea>
+			</div>
+
+			<!-- Submit -->
+			<PrimaryButton text="ENVIAR MENSAJE" type="submit" fullWidth />
+		</form>
+	</div>
+</section>

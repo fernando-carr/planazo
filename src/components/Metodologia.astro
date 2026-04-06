@@ -1,0 +1,30 @@
+---
+import SectionTitle from './ui/SectionTitle.astro';
+import TimelineStep from './TimelineStep.astro';
+
+const steps = [
+	{ title: 'DIAGNÓSTICO', description: 'Analizamos la situación actual de la marca, su presencia, su público y sus objetivos.' },
+	{ title: 'ESTRATEGIA', description: 'Definimos el enfoque de comunicación, los mensajes clave y el plan de contenidos.' },
+	{ title: 'PRODUCCIÓN', description: 'Desarrollamos contenido audiovisual, piezas gráficas y materiales comunicacionales alineados a la estrategia.' },
+	{ title: 'IMPLEMENTACIÓN', description: 'Organizamos la publicación y distribución del contenido en los canales adecuados.' },
+	{ title: 'SEGUIMIENTO Y OPTIMIZACIÓN', description: 'Evaluamos resultados y ajustamos las acciones para mejorar el impacto de la comunicación.' },
+];
+---
+
+<section id="metodologia" class="bg-white px-5 md:px-10 lg:px-[120px] py-[60px] md:py-20 lg:py-[100px] flex flex-col items-center gap-8 md:gap-10 lg:gap-12">
+	<SectionTitle
+		title="NUESTRA METODOLOGÍA"
+		subtitle="Trabajamos bajo un modelo que garantiza que cada acción de comunicación tenga un propósito claro."
+	/>
+
+	<div class="w-full max-w-3xl flex flex-col">
+		{steps.map((step, i) => (
+			<TimelineStep
+				number={i + 1}
+				title={step.title}
+				description={step.description}
+				isLast={i === steps.length - 1}
+			/>
+		))}
+	</div>
+</section>

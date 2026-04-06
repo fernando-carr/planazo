@@ -1,0 +1,15 @@
+---
+import { Check } from '@lucide/astro';
+
+interface Props {
+	text: string;
+	class?: string;
+}
+
+const { text, class: className = '' } = Astro.props;
+---
+
+<div class:list={['flex items-center gap-3', className]}>
+	<Check size={20} class="text-primary shrink-0" />
+	<span class="text-sm lg:text-[0.9375rem]">{text}</span>
+</div>

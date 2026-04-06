@@ -1,0 +1,56 @@
+---
+import SectionTitle from './ui/SectionTitle.astro';
+import PricingCard from './PricingCard.astro';
+---
+
+<section id="servicios" class="bg-white px-5 md:px-10 lg:px-[120px] py-[60px] md:py-20 lg:py-[100px] flex flex-col gap-8 md:gap-10 lg:gap-12">
+	<SectionTitle
+		title="PAQUETES DE SERVICIOS"
+		subtitle="Hemos diseñado tres niveles de servicio para adaptarnos a diferentes etapas y necesidades de nuestros clientes."
+	/>
+
+	<div class="grid grid-cols-1 lg:grid-cols-3 gap-3.5 md:gap-5 lg:gap-6">
+		<PricingCard
+			tag="BASE ESTRATÉGICA"
+			title="PILARES BÁSICOS DE COMUNICACIÓN"
+			subtitle="Para PYMES, emprendedores e instituciones en fase inicial"
+			features={[
+				'Diagnóstico estratégico completo',
+				'Planificación táctica mensual',
+				'4 Reels · 15-30 fotos · 8 carruseles',
+				'Calendario y métricas mensuales',
+			]}
+			ctaText="SOLICITAR COTIZACIÓN"
+		/>
+
+		<PricingCard
+			variant="featured"
+			tag="POPULAR"
+			title="PLAN DE CRECIMIENTO CONTINUO"
+			subtitle="Para marcas que ya publican pero no escalan ni convierten"
+			note="Incluye todo el paquete anterior más:"
+			features={[
+				'Estrategia de conversión y embudos',
+				'8 Reels · adaptaciones multiplataforma',
+				'Seguimiento y análisis mensual',
+				'Automatización y CRM (GoHighLevel)',
+			]}
+			ctaText="SOLICITAR COTIZACIÓN"
+		/>
+
+		<PricingCard
+			tag="DIRECCIÓN ESTRATÉGICA"
+			title="ACOMPAÑAMIENTO ESTRATÉGICO"
+			subtitle="Para empresas que entienden el contenido como un activo estratégico"
+			note="Incluye todo lo anterior más:"
+			features={[
+				'Dirección estratégica continua',
+				'12 Reels premium · multiplataforma',
+				'Automatización avanzada completa',
+				'KPIs, análisis ROI, ajustes en tiempo real',
+				'Transferencia de conocimiento',
+			]}
+			ctaText="SOLICITAR COTIZACIÓN"
+		/>
+	</div>
+</section>

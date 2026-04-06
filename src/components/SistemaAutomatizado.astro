@@ -1,0 +1,37 @@
+---
+import SectionTitle from './ui/SectionTitle.astro';
+import FeatureItem from './ui/FeatureItem.astro';
+import PrimaryButton from './ui/PrimaryButton.astro';
+import { Bot } from '@lucide/astro';
+---
+
+<section id="automatizacion" class="bg-white px-5 md:px-10 lg:px-[120px] py-[60px] md:py-20 lg:py-[100px]">
+	<div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-[60px]">
+		<!-- Left Column -->
+		<div class="flex flex-col gap-6 md:gap-8 lg:gap-6 w-full lg:w-1/2">
+			<SectionTitle
+				titleSize="large"
+				title="SISTEMA INTEGRAL AUTOMATIZADO"
+				subtitle="Diseñamos sistemas de IA 100% personalizados que se integran a tus procesos actuales, eliminan cuellos de botella, multiplican tu productividad y escalan tu negocio de forma eficiente — sin necesidad de contratar más personal."
+			/>
+
+			<p class="text-sm md:text-[0.875rem] lg:text-[0.9375rem] italic leading-relaxed">
+				No vendemos software genérico. Cada automatización se construye a la medida de tus flujos de trabajo, objetivos comerciales y modelo de negocio.
+			</p>
+
+			<div class="flex flex-col gap-2 md:gap-2.5 lg:gap-3">
+				<FeatureItem text="Embudos completos (contenido → CRM → seguimiento)" />
+				<FeatureItem text="Automatizaciones personalizadas" />
+				<FeatureItem text="Integración con email, WhatsApp, landing pages" />
+			</div>
+
+			<PrimaryButton text="AGENDA UNA CONSULTA" href="#contacto" fullWidth class="md:w-auto" />
+		</div>
+
+		<!-- Right Column - Dark gradient box (hidden on mobile) -->
+		<div class="hidden md:flex w-full lg:w-1/2 h-[300px] lg:h-[480px] rounded-lg items-center justify-center"
+			style="background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 50%, #F2B70520 100%);">
+			<Bot size={120} class="text-primary-40" />
+		</div>
+	</div>
+</section>

@@ -1,0 +1,77 @@
+---
+import PrimaryButton from './ui/PrimaryButton.astro';
+import SecondaryButton from './ui/SecondaryButton.astro';
+import FeatureItem from './ui/FeatureItem.astro';
+
+interface Props {
+	tag: string;
+	title: string;
+	subtitle: string;
+	features: string[];
+	ctaText: string;
+	ctaHref?: string;
+	variant?: 'default' | 'featured';
+	note?: string;
+}
+
+const { tag, title, subtitle, features, ctaText, ctaHref = '#contacto', variant = 'default', note } = Astro.props;
+const isFeatured = variant === 'featured';
+---
+
+<div class:list={[
+	'flex flex-col gap-4 lg:gap-5 p-6 lg:p-9 border',
+	isFeatured
+		? 'bg-dark-card border-primary border-2'
+		: 'bg-white border-border'
+]}>
+	<!-- Tag/Badge -->
+	<span class:list={[
+		'self-start text-[0.6875rem] font-body font-bold tracking-[2px] px-3 py-1.5',
+		isFeatured ? 'bg-primary text-dark-card' : 'bg-bg-light text-text-body'
+	]}>
+		{tag}
+	</span>
+
+	<!-- Title -->
+	<h3 class:list={[
+		'font-heading font-normal text-[1.625rem] lg:text-[1.75rem] leading-tight',
+		isFeatured ? 'text-white' : 'text-text-heading'
+	]}>
+		{title}
+	</h3>
+
+	<!-- Subtitle -->
+	<p class:list={[
+		'text-sm leading-relaxed',
+		isFeatured ? 'text-white/60' : 'text-text-body'
+	]}>
+		{subtitle}
+	</p>
+
+	<!-- Note (for cards that include previous tier) -->
+	{note && (
+		<span class="text-primary font-body text-[0.8125rem] font-semibold">{note}</span>
+	)}
+
+	<!-- Divider -->
+	<div class:list={[
+		'h-px w-full',
+		isFeatured ? 'bg-white/[0.13]' : 'bg-border'
+	]}></div>
+
+	<!-- Features -->
+	<div class="flex flex-col gap-3">
+		{features.map((feat) => (
+			<FeatureItem text={feat} class={isFeatured ? '[&_span]:text-white/80' : ''} />
+		))}
+	</div>
+
+	<!-- CTA -->
+	<div class="mt-auto pt-4">
+		{isFeatured ? (
+			<PrimaryButton text={ctaText} href={ctaHref} class="text-sm" />
+		) : (
+			<SecondaryButton text={ctaText} href={ctaHref} variant="dark" class="text-sm" />
+		)}
+	</div>
+</div>

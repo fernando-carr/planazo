@@ -1,0 +1,21 @@
+---
+interface Props {
+	text: string;
+	href?: string;
+	type?: 'button' | 'submit';
+	fullWidth?: boolean;
+	class?: string;
+}
+
+const { text, href, type, fullWidth = false, class: className = '' } = Astro.props;
+const Tag = href ? 'a' : 'button';
+const baseClasses = `inline-flex items-center justify-center bg-primary text-dark-card font-body font-semibold text-sm md:text-base px-8 py-4 tracking-wide hover:brightness-110 transition-all cursor-pointer ${fullWidth ? 'w-full' : ''} ${className}`;
+---
+
+<Tag
+	{...(href ? { href } : {})}
+	{...(type ? { type } : {})}
+	class={baseClasses}
+>
+	{text}
+</Tag>

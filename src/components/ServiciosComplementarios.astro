@@ -1,0 +1,32 @@
+---
+import SectionTitle from './ui/SectionTitle.astro';
+import ServiceCard from './ui/ServiceCard.astro';
+
+const services = [
+	{ icon: 'pen-tool', title: 'Diseño Gráfico e Identidad Visual', description: 'Creación y fortalecimiento de identidad de marca, logotipos y sistemas visuales.' },
+	{ icon: 'book-open', title: 'Diseño Editorial', description: 'Materiales corporativos, catálogos, brochures y publicaciones editoriales.' },
+	{ icon: 'building-2', title: 'Espacios Comerciales', description: 'Diseño e implementación de espacios comerciales y experiencias de marca.' },
+	{ icon: 'video', title: 'Producción Audiovisual', description: 'Producción audiovisual especializada para proyectos de alta complejidad.' },
+	{ icon: 'megaphone', title: 'Campañas de Comunicación', description: 'Desarrollo de campañas integrales de comunicación y relaciones públicas.' },
+	{ icon: 'printer', title: 'Materiales Promocionales', description: 'Diseño e impresión de materiales promocionales, merchandising y PLV.' },
+	{ icon: 'eye', title: 'Soluciones Visuales', description: 'Implementación de soluciones visuales y comunicacionales para marcas.' },
+	{ icon: 'layout-grid', title: 'Diseño de Stand', description: 'Diseño e implementación de stand para ferias y eventos corporativos.' },
+];
+---
+
+<section class="bg-white px-5 md:px-10 lg:px-[120px] py-[60px] md:py-20 lg:py-[100px] flex flex-col gap-8 md:gap-10 lg:gap-12">
+	<SectionTitle
+		title="SERVICIOS COMPLEMENTARIOS"
+		subtitle="Además de nuestros paquetes principales, ofrecemos servicios que fortalecen la comunicación y la identidad de las marcas."
+	/>
+
+	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
+		{services.map((svc) => (
+			<ServiceCard icon={svc.icon} title={svc.title} description={svc.description} />
+		))}
+	</div>
+
+	<p class="text-sm italic leading-relaxed max-w-[900px]">
+		Estos servicios pueden integrarse a los paquetes principales o desarrollarse como proyectos específicos según las necesidades de cada cliente.
+	</p>
+</section>
