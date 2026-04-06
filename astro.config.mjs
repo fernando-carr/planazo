@@ -10,5 +10,7 @@ export default defineConfig({
 	server: {
     port: 4322,
     host: true
-  }
+  },
+	site: 'https://fernando-carr.github.io',
+	// base: '/planazo'
 });
